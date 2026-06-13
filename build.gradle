@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+
+version = '1.0.0'
+group = 'com.goety.everlasting'
+archivesBaseName = 'goety_everlasting'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.mojang.level', 'debug'
+            mods {
+                goety_everlasting {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.mojang.level', 'debug'
+            mods {
+                goety_everlasting {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+
+    // 本地 Maven 依赖（需要先通过 mvn install 安装到本地仓库）
+    implementation fg.deobf("com.goety.deps:EverlastingAbilities:1.20.1-2.3.1")
+    implementation fg.deobf("com.goety.deps:CyclopsCore:1.20.1-1.22.1")
+    implementation fg.deobf("com.goety.deps:Goety:2.5.36.1")
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": "goety_everlasting",
+                "Specification-Vendor": "You",
+                "Specification-Version": "1",
+                "Implementation-Title": project.name,
+                "Implementation-Version": project.version,
+                "Implementation-Vendor" :"You",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}

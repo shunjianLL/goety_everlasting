@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT"
+
+[[mods]]
+modId="goety_everlasting"
+version="1.20.1-0.0.1"
+displayName="Goety Everlasting Abilities"
+logoFile="goety_everlasting.png"
+credits=""
+authors="shunjianll"
+description='''
+Adds Goety-themed abilities to Everlasting Abilities.
+Currently adds: Leeching - restores health based on target's max HP.
+'''
+
+[[dependencies.goety_everlasting]]
+modId="forge"
+mandatory=true
+versionRange="[40,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.goety_everlasting]]
+modId="everlastingabilities"
+mandatory=true
+versionRange="[2,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.goety_everlasting]]
+modId="goety"
+mandatory=true
+versionRange="[2.5,)"
+ordering="AFTER"
+side="BOTH"

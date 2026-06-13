@@ -1,0 +1,16 @@
+{
+  "ability.goety_everlasting.leeching": "吸血",
+  "ability.goety_everlasting.leeching.info": "只有吸血",
+
+  "ability.goety_everlasting.rampage": "暴怒",
+  "ability.goety_everlasting.rampage.info": "增加伤害，挖掘和攻击速度",
+
+  "ability.goety_everlasting.soul_armor": "灵魂护甲",
+  "ability.goety_everlasting.soul_armor.info": "增加防御（裸装大幅度增加防御）",
+
+  "ability.goety_everlasting.explosive": "一触即发",
+  "ability.goety_everlasting.explosive.info": "受伤爆炸",
+
+  "ability.goety_everlasting.buff": "强化",
+  "ability.goety_everlasting.buff.info": "增加伤害"
+}

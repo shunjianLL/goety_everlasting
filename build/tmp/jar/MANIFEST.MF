@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: goety_everlasting
+Specification-Vendor: You
+Specification-Version: 1
+Implementation-Title: GoetyEverlasting
+Implementation-Version: 1.0.0
+Implementation-Vendor: You
+Implementation-Timestamp: 2026-06-13T10:27:02+0800
+
